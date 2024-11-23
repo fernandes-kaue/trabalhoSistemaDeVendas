@@ -4,4 +4,6 @@ public enum Canal {
     INSTAGRAM,
     FACEBOOK,
     OLX
+
+    // SUPOSTAMENTE tem que fazer construtor e toString
 }
