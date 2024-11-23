@@ -5,6 +5,26 @@ public class Controle {
     private List<Produto> produtos;
     private List<Cliente> clientes;
 
+    public void criarVenda(){
+        //TODO -> implementar lógica
+    }
+
+    public void imprimirVendas(){
+        //TODO -> implementar lógica
+    }
+
+    public void imprimirVendasCliente() {
+        //TODO -> implementar lógica
+    }
+
+    public void imprimirCliente() {
+        //TODO -> implementar lógica
+    }
+
+    public void imprimirProdutos() {
+        //TODO -> implementar lógica
+    }
+
 
 
 }
