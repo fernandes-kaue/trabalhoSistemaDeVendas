@@ -3,7 +3,7 @@ import java.util.Date;
 
 public class Venda {
     private static int geradorId = 1;
-    private int id;
+    private Integer id;
     private Date dataVenda;
     private double valor;
     private Status status;
@@ -17,16 +17,9 @@ public class Venda {
     }
 
     // getters and setters
-    public static int getGeradorId() {
-        return geradorId;
-    }
 
-    public int getId() {
+    public Integer getId() {
         return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public Date getDataVenda() {
@@ -72,8 +65,22 @@ public class Venda {
     // toString
     @Override
     public String toString() {
-        return "";
+        return String.format(
+                "Venda ID: %d%n" +
+                        "Data da Venda: %tF %<tT%n" +
+                        "Valor: R$ %.2f%n" +
+                        "Status: %s%n" +
+                        "Canal: %s%n" +
+                        "Cliente: %s%n",
+                id,
+                dataVenda,
+                valor,
+                status,
+                canal,
+                cliente
+        );
     }
+
 
 
 }

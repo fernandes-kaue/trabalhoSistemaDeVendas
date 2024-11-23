@@ -1,12 +1,37 @@
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class Controle {
-    private List<Venda> vendas;
-    private List<Produto> produtos;
-    private List<Cliente> clientes;
+    private List<Venda> vendas = new ArrayList<>();
+    private List<Produto> produtos = new ArrayList<>();
+    private List<Cliente> clientes = new ArrayList<>();
+
+    Scanner sc = new Scanner(System.in);
 
     public void criarVenda(){
         //TODO -> implementar lógica
+    }
+
+    public void mudarStatusVenda(int idVenda) {
+
+        for (Venda venda : vendas) {
+            if(!venda.getId().equals(idVenda)) {
+                System.err.println("Não existe venda com esse ID.");
+            }
+        }
+
+        System.out.println("Qual o novo status da venda " + idVenda + "?");
+        String status = sc.nextLine();
+
+        if (status.equalsIgnoreCase("reserva")) {
+
+        } else if (status.equalsIgnoreCase("pagototal")) {
+
+        } else {
+
+    }
+
     }
 
     public void imprimirVendas(){

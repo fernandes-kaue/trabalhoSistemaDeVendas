@@ -1,7 +1,7 @@
 
 public class Cliente {
     private int geradorId;
-    private int id;
+    private Integer id;
     private String nome;
     private String whatsapp;
     private int instagram;
