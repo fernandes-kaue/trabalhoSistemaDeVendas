@@ -9,14 +9,14 @@ public class Controle {
 
     Scanner sc = new Scanner(System.in);
 
-    public void criarVenda(){
+    public void criarVenda() {
         //TODO -> implementar lógica
     }
 
     public void mudarStatusVenda(int idVenda) {
 
         for (Venda venda : vendas) {
-            if(!venda.getId().equals(idVenda)) {
+            if (!venda.getId().equals(idVenda)) {
                 System.err.println("Não existe venda com esse ID.");
             }
         }
@@ -30,11 +30,11 @@ public class Controle {
 
         } else {
 
-    }
+        }
 
     }
 
-    public void imprimirVendas(){
+    public void imprimirVendas() {
         //TODO -> implementar lógica
     }
 
@@ -49,7 +49,6 @@ public class Controle {
     public void imprimirProdutos() {
         //TODO -> implementar lógica
     }
-
 
 
 }

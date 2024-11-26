@@ -1,4 +1,3 @@
-
 public class Cliente {
     private int geradorId;
     private Integer id;

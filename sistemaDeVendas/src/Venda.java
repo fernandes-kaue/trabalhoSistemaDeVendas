@@ -1,4 +1,3 @@
-
 import java.util.Date;
 
 public class Venda {
@@ -65,22 +64,8 @@ public class Venda {
     // toString
     @Override
     public String toString() {
-        return String.format(
-                "Venda ID: %d%n" +
-                        "Data da Venda: %tF %<tT%n" +
-                        "Valor: R$ %.2f%n" +
-                        "Status: %s%n" +
-                        "Canal: %s%n" +
-                        "Cliente: %s%n",
-                id,
-                dataVenda,
-                valor,
-                status,
-                canal,
-                cliente
-        );
+        return String.format("Venda ID: %d%n" + "Data da Venda: %tF %<tT%n" + "Valor: R$ %.2f%n" + "Status: %s%n" + "Canal: %s%n" + "Cliente: %s%n", id, dataVenda, valor, status, canal, cliente);
     }
-
 
 
 }
