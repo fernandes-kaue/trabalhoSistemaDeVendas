@@ -11,6 +11,10 @@ public enum Canal {
         return valor;
     }
 
+    public void setValor(int valor) {
+        this.valor = valor;
+    }
+
     @Override
     public String toString() {
         switch (this) {
