@@ -13,22 +13,22 @@ public class Main {
             opcaoMenu = sc.nextInt();
             switch (opcaoMenu) {
                 case 1:
-                    //TODO -> implementar lógica
+                    controle.criarVenda();
                     break;
                 case 2:
-                    //TODO -> implementar lógica
+                    controle.imprimirVendas();
                     break;
                 case 3:
-                    //TODO -> implementar lógica
+                    controle.imprimirVendasCliente();
                     break;
                 case 4:
-                    //TODO -> implementar lógica
+                    controle.imprimirCliente();
                     break;
                 case 5:
-                    //TODO -> implementar lógica
+                    controle.imprimirProdutos();
                     break;
                 case 0:
-                    //TODO -> implementar lógica
+                    controle.sair();
                     break;
                 default:
                     System.out.println("Opção inválida! Informe novamente.");

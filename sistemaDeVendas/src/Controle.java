@@ -50,5 +50,10 @@ public class Controle {
         //TODO -> implementar lógica
     }
 
+    public void sair() {
+        System.out.println("Saindo do sistema...");
+        System.exit(0);
+    }
+
 
 }
