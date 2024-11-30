@@ -41,14 +41,13 @@ public class Controle {
         }
 
 
-
     }
 
     public void imprimirVendas() {
         //TODO -> implementar lógica
     }
 
-    public void imprimirVendasCliente() {
+    public void imprimirVendasCliente(int idCliente) {
         //TODO -> implementar lógica
     }
 
