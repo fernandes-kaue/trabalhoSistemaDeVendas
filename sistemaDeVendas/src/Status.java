@@ -14,16 +14,12 @@ public enum Status {
 
     @Override
     public String toString() {
-        switch (this) {
-            case RESERVA:
-                return "O pedido foi reservado.";
-            case PAGOTOTAL:
-                return "Já foi feito o pagamento total do pedido.";
-            case ENVIADO:
-                return "O pedido já foi enviado.";
-            default:
-                return "Sem status notificado.";
-        }
+        return switch (this) {
+            case RESERVA -> "O pedido foi reservado.";
+            case PAGOTOTAL -> "Já foi feito o pagamento total do pedido.";
+            case ENVIADO -> "O pedido já foi enviado.";
+            default -> "Sem status notificado.";
+        };
     }
 
 }
