@@ -20,8 +20,9 @@ public class Controle {
         //TODO -> implementar lógica
     }
 
-    public void imprimirVendas() {
+    public String imprimirVendas() {
         //TODO -> implementar lógica
+        return null; // remover aviso de erro
     }
 
     public void mudarStatusVenda(int idVenda) {
@@ -55,16 +56,19 @@ public class Controle {
 
     }
 
-    public void imprimirVendasCliente(int idCliente) {
+    public String imprimirVendasCliente(int idCliente) {
         //TODO -> implementar lógica
+        return null; // remover aviso de erro
     }
 
-    public void imprimirCliente() {
+    public String imprimirCliente() {
         //TODO -> implementar lógica
+        return null; // remover aviso de erro
     }
 
-    public void imprimirProdutos() {
+    public String imprimirProdutos() {
         //TODO -> implementar lógica
+        return null; // remover aviso de erro
     }
 
     public String imprimirVendasCanal (String canal) {

@@ -17,18 +17,13 @@ public enum Canal {
 
     @Override
     public String toString() {
-        switch (this) {
-            case WHATSAPP:
-                return "O canal de venda utilizado foi: Whatsapp.";
-            case INSTAGRAM:
-                return "O canal de venda utilizado foi: Instagram.";
-            case FACEBOOK:
-                return "O canal de venda utilizado foi: Facebook,";
-            case OLX:
-                return "O canal de venda utilizado foi: OLX.";
-            default:
-                return "Canal de venda desconhecido.";
-        }
+        return switch (this) {
+            case WHATSAPP -> "O canal de venda utilizado foi: Whatsapp.";
+            case INSTAGRAM -> "O canal de venda utilizado foi: Instagram.";
+            case FACEBOOK -> "O canal de venda utilizado foi: Facebook,";
+            case OLX -> "O canal de venda utilizado foi: OLX.";
+            default -> "Canal de venda desconhecido.";
+        };
     }
 
 }
