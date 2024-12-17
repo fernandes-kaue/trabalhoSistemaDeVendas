@@ -82,8 +82,13 @@ public class Controle {
     }
 
     public String imprimirVendaId(int id) {
-        //TODO -> implementar lógica
-        return null; // remover aviso de erro
+        //TODO -> ALGUEM TESTA ISSO PELOAMOR DE DEUS
+        for (Venda venda : vendas) {
+            if (venda.getId() == id) {
+                return venda.toString();
+            }
+        }
+        return null;
     }
 
     public void sair() {

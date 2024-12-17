@@ -3,11 +3,12 @@ import java.util.Date;
 public class Venda {
     private static int geradorId = 1;
     private Integer id;
-    private Date dataVenda;
-    private double valor;
+    private Cliente cliente;
+    private Produto produto;
+    private double valorPago;
     private Status status;
     private Canal canal;
-    private Cliente cliente;
+    private Date dataVenda;
 
     // construtores
     public Venda() {
@@ -29,12 +30,12 @@ public class Venda {
         this.dataVenda = dataVenda;
     }
 
-    public double getValor() {
-        return valor;
+    public double getValorPago() {
+        return valorPago;
     }
 
-    public void setValor(double valor) {
-        this.valor = valor;
+    public void setValorPago(double valorPago) {
+        this.valorPago = valorPago;
     }
 
     public Status getStatus() {
@@ -64,7 +65,7 @@ public class Venda {
     // toString
     @Override
     public String toString() {
-        return String.format("Venda ID: %d%n" + "Data da Venda: %tF %<tT%n" + "Valor: R$ %.2f%n" + "Status: %s%n" + "Canal: %s%n" + "Cliente: %s%n", id, dataVenda, valor, status, canal, cliente);
+        return String.format("Venda ID: %d%n" + "Data da Venda: %tF %<tT%n" + "Valor: R$ %.2f%n" + "Status: %s%n" + "Canal: %s%n" + "Cliente: %s%n", id, dataVenda, valorPago, status, canal, cliente);
     }
 
 

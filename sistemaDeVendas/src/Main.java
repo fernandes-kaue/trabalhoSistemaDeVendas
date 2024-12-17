@@ -6,6 +6,7 @@ public class Main {
         Controle controle = new Controle();
         int opcaoMenu = -1;
 
+
         System.out.println("Bem-vindo ao nosso Sistema de Vendas! \n ");
         while (opcaoMenu != 0) {
             System.out.println(" MENU: \n Informe a opção desejada:");
@@ -16,17 +17,41 @@ public class Main {
                     controle.criarVenda();
                     break;
                 case 2:
-                    controle.imprimirVendas();
-                    break;
+                    controle.cadastrarProduto();
                 case 3:
-                    controle.imprimirVendasCliente();
+                    //TODO -> TESTAR
+                    System.out.println("informe o Id do cliente que você quer ver as compras: ");
+                    var id = sc.nextInt();
+                    controle.imprimirVendasCliente(id);
                     break;
                 case 4:
-                    controle.imprimirCliente();
+                    controle.imprimirVendas();
                     break;
                 case 5:
-                    controle.imprimirProdutos();
+                    controle.imprimirCliente();
                     break;
+                case 6:
+
+                    break;
+                case 7:
+
+                    break;
+                case 8:
+
+                    break;
+                case 9:
+
+                    break;
+                case 10:
+
+                    break;
+                case 11:
+
+                    break;
+                case 12:
+
+                    break;
+
                 case 0:
                     controle.sair();
                     break;
