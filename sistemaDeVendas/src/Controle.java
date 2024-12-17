@@ -12,6 +12,18 @@ public class Controle {
         //TODO -> implementar lógica
     }
 
+    public void cadastrarCliente(){
+        //TODO -> implementar lógica
+    }
+
+    public void cadastrarProduto(){
+        //TODO -> implementar lógica
+    }
+
+    public void imprimirVendas() {
+        //TODO -> implementar lógica
+    }
+
     public void mudarStatusVenda(int idVenda) {
 
         for (Venda venda : vendas) {
@@ -43,10 +55,6 @@ public class Controle {
 
     }
 
-    public void imprimirVendas() {
-        //TODO -> implementar lógica
-    }
-
     public void imprimirVendasCliente(int idCliente) {
         //TODO -> implementar lógica
     }
@@ -57,6 +65,21 @@ public class Controle {
 
     public void imprimirProdutos() {
         //TODO -> implementar lógica
+    }
+
+    public String imprimirVendasCanal (String canal) {
+        //TODO -> implementar lógica
+        return null; // remover aviso de erro
+    }
+
+    public String imprimirVendasPeriodo (String dataInicio, String dataFim) {
+        //TODO -> implementar lógica
+        return null; // remover aviso de erro
+    }
+
+    public String imprimirVendaId(int id) {
+        //TODO -> implementar lógica
+        return null; // remover aviso de erro
     }
 
     public void sair() {
