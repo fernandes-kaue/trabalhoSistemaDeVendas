@@ -2,7 +2,7 @@ public enum Status {
 
     RESERVA(1), PAGOTOTAL(2), ENVIADO(3);
 
-    private int valor;
+    private final int valor;
 
     Status(int valor) {
         this.valor = valor;
