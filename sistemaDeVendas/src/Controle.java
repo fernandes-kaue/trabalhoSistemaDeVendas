@@ -91,7 +91,7 @@ public class Controle {
         return null;
     }
 
-    public void sair() {
+    public void sair() { // teoricamente conta como uma função do menu...? se sim, faltam duas
         System.out.println("Saindo do sistema...");
         System.exit(0);
     }
