@@ -87,6 +87,7 @@ public class Controle {
             if (venda.getId() == id) {
                 return venda.toString();
             }
+            return "Id inválido.";
         }
         return null;
     }
