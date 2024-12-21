@@ -28,7 +28,7 @@ public class Main {
                     controle.imprimirVendas();
                     break;
                 case 5:
-                    controle.imprimirCliente();
+                    controle.imprimirClientes();
                     break;
                 case 6:
 

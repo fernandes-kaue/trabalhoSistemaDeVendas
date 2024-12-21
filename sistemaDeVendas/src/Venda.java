@@ -2,7 +2,7 @@ import java.util.Date;
 
 public class Venda {
     private static int geradorId = 1;
-    private Integer id;
+    private final Integer id;
     private Cliente cliente;
     private Produto produto;
     private double valorPago;

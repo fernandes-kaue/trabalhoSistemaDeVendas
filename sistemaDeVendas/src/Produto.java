@@ -1,5 +1,5 @@
 public class Produto {
-    private static int geradorId = 1;
+    private static final int geradorId = 1;
     private Integer id;
     private String nome;
     private double valor;

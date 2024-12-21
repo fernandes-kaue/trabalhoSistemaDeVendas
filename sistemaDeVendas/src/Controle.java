@@ -12,17 +12,20 @@ public class Controle {
         //TODO -> implementar lógica
     }
 
-    public void cadastrarCliente(){
+    public void cadastrarCliente() {
         //TODO -> implementar lógica
     }
 
-    public void cadastrarProduto(){
+    public void cadastrarProduto() {
         //TODO -> implementar lógica
     }
 
     public String imprimirVendas() {
-        //TODO -> implementar lógica
-        return null; // remover aviso de erro
+        StringBuilder sb = new StringBuilder();
+        for (Venda venda : vendas) {
+            sb.append(venda.toString()).append("\n");
+        }
+        return sb.toString();
     }
 
     public void mudarStatusVenda(int idVenda) {
@@ -56,27 +59,43 @@ public class Controle {
 
     }
 
-    public String imprimirVendasCliente(int idCliente) {
-        //TODO -> implementar lógica
-        return null; // remover aviso de erro
+    public String imprimirVendasCliente(String nomeCliente) {
+        StringBuilder sb = new StringBuilder();
+        for (Venda venda : vendas) {
+            if (venda.getCliente().getNome().equalsIgnoreCase(nomeCliente)) {
+                sb.append(venda.toString()).append("\n");
+            }
+        }
+        return sb.toString();
     }
 
-    public String imprimirCliente() {
-        //TODO -> implementar lógica
-        return null; // remover aviso de erro
+    public String imprimirClientes() {
+        StringBuilder sb = new StringBuilder();
+        for (Cliente cliente : clientes) {
+            sb.append(cliente.toString()).append("\n");
+        }
+        return sb.toString();
     }
 
     public String imprimirProdutos() {
-        //TODO -> implementar lógica
-        return null; // remover aviso de erro
+        StringBuilder sb = new StringBuilder();
+        for (Produto produto : produtos) {
+            sb.append(produto.toString()).append("\n");
+        }
+        return sb.toString();
     }
 
-    public String imprimirVendasCanal (String canal) {
-        //TODO -> implementar lógica
-        return null; // remover aviso de erro
+    public String imprimirVendasCanal(Canal canal) {
+        StringBuilder sb = new StringBuilder();
+        for (Venda venda : vendas) {
+            if (venda.getCanal() == canal) {
+                sb.append(venda.toString()).append("\n");
+            }
+        }
+        return sb.toString();
     }
 
-    public String imprimirVendasPeriodo (String dataInicio, String dataFim) {
+    public String imprimirVendasPeriodo(String dataInicio, String dataFim) {
         //TODO -> implementar lógica
         return null; // remover aviso de erro
     }

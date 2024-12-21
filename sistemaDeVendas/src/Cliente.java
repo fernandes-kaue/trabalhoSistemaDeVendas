@@ -5,6 +5,46 @@ public class Cliente {
     private String whatsapp;
     private String instagram;
 
+    public int getGeradorId() {
+        return geradorId;
+    }
+
+    public void setGeradorId(int geradorId) {
+        this.geradorId = geradorId;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getWhatsapp() {
+        return whatsapp;
+    }
+
+    public void setWhatsapp(String whatsapp) {
+        this.whatsapp = whatsapp;
+    }
+
+    public String getInstagram() {
+        return instagram;
+    }
+
+    public void setInstagram(String instagram) {
+        this.instagram = instagram;
+    }
+
     @Override
     public String toString() {
         if (whatsapp != null && instagram != null) {
