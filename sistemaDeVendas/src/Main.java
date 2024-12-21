@@ -14,10 +14,10 @@ public class Main {
             opcaoMenu = sc.nextInt();
             switch (opcaoMenu) {
                 case 1:
-                    controle.criarVenda();
+                    // controle.criarVenda();
                     break;
                 case 2:
-                    controle.cadastrarProduto();
+                     // controle.cadastrarProduto();
                 case 3:
                     //TODO -> TESTAR
                     System.out.println("informe o Id do cliente que você quer ver as compras: ");
@@ -34,7 +34,7 @@ public class Main {
 
                     break;
                 case 7:
-
+                    controle.imprimirProdutos();
                     break;
                 case 8:
 
