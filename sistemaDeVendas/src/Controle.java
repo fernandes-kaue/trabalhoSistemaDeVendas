@@ -59,10 +59,10 @@ public class Controle {
 
     }
 
-    public String imprimirVendasCliente(String nomeCliente) {
+    public String imprimirVendasCliente(int id) {
         StringBuilder sb = new StringBuilder();
         for (Venda venda : vendas) {
-            if (venda.getCliente().getNome().equalsIgnoreCase(nomeCliente)) {
+            if (venda.getCliente().getId().equals(id)) {
                 sb.append(venda.toString()).append("\n");
             }
         }
