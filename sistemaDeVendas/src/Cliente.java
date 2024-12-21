@@ -1,5 +1,5 @@
 public class Cliente {
-    private int geradorId;
+    private int geradorId = 0;
     private Integer id;
     private String nome;
     private String whatsapp;
