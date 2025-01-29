@@ -1,120 +1,48 @@
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 public class Controle {
-    Scanner sc = new Scanner(System.in);
     private List<Venda> vendas = new ArrayList<>();
     private List<Produto> produtos = new ArrayList<>();
     private List<Cliente> clientes = new ArrayList<>();
 
-    public void criarVenda() {
-        //TODO -> implementar lógica
+    public void criarVenda(Cliente cliente, Produto produto, double valorPago, Status status, Canal canal) {
+        Venda venda = new Venda(cliente, produto, valorPago, status, canal);
+        vendas.add(venda);
     }
 
-    public void cadastrarCliente() {
-        //TODO -> implementar lógica
-    }
-
-    public void cadastrarProduto() {
-        //TODO -> implementar lógica
-    }
-
-    public String imprimirVendas() {
-        StringBuilder sb = new StringBuilder();
+    public void imprimirVendas() {
         for (Venda venda : vendas) {
-            sb.append(venda.toString()).append("\n");
+            System.out.println(venda);
         }
-        return sb.toString();
     }
 
-    public void mudarStatusVenda(int idVenda) {
-
+    public void imprimirVendasCliente(String nomeCliente) {
         for (Venda venda : vendas) {
-            if (!venda.getId().equals(idVenda)) {
-                System.err.println("Não existe venda com esse ID.");
-                break;
-            }
-            System.out.println("Qual o novo status da venda " + idVenda + "?");
-            System.out.println("(1 = Reserva, 2 = Pago Total, 3 = Enviado)");
-            int novoStatus = sc.nextInt();
-
-            switch (novoStatus) {
-                case 1:
-                    //TODO -> Falta implementar a lógica para encontrar a venda pelo ID na lista
-                    break;
-                case 2:
-                    //TODO -> Falta implementar a lógica para encontrar a venda pelo ID na lista
-                    break;
-                case 3:
-                    //TODO -> Falta implementar a lógica para encontrar a venda pelo ID na lista
-                    break;
-                default:
-                    System.out.println("Opção inválida!");
-            }
-
-
-        }
-
-
-    }
-
-    public String imprimirVendasCliente(int id) {
-        StringBuilder sb = new StringBuilder();
-        for (Venda venda : vendas) {
-            if (venda.getCliente().getId().equals(id)) {
-                sb.append(venda.toString()).append("\n");
+            if (venda.getCliente().getNome().equals(nomeCliente)) {
+                System.out.println(venda);
             }
         }
-        return sb.toString();
     }
 
-    public String imprimirClientes() {
-        StringBuilder sb = new StringBuilder();
+    public void imprimirClientes() {
         for (Cliente cliente : clientes) {
-            sb.append(cliente.toString()).append("\n");
+            System.out.println(cliente);
         }
-        return sb.toString();
     }
 
-    public String imprimirProdutos() {
-        StringBuilder sb = new StringBuilder();
+    public void imprimirProdutos() {
         for (Produto produto : produtos) {
-            sb.append(produto.toString()).append("\n");
+            System.out.println(produto);
         }
-        return sb.toString();
     }
 
-    public String imprimirVendasCanal(Canal canal) {
-        StringBuilder sb = new StringBuilder();
-        for (Venda venda : vendas) {
-            if (venda.getCanal() == canal) {
-                sb.append(venda.toString()).append("\n");
-            }
-        }
-        return sb.toString();
+    // Métodos para adicionar clientes e produtos
+    public void adicionarCliente(Cliente cliente) {
+        clientes.add(cliente);
     }
 
-    public String imprimirVendasPeriodo(String dataInicio, String dataFim) {
-        //TODO -> implementar lógica
-        return null; // remover aviso de erro
+    public void adicionarProduto(Produto produto) {
+        produtos.add(produto);
     }
-
-    public String imprimirVendaId(int id) {
-        //TODO -> ALGUEM TESTA ISSO PELOAMOR DE DEUS
-        for (Venda venda : vendas) {
-            if (venda.getId() == id) {
-                return venda.toString();
-            }
-            return "Id inválido.";
-        }
-        return null;
-    }
-
-    public void sair() { // teoricamente conta como uma função do menu...? se sim, faltam duas
-        System.out.println("Saindo do sistema...");
-        System.exit(0);
-    }
-
-
 }
