@@ -2,64 +2,64 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
         Controle controle = new Controle();
-        int opcaoMenu = -1;
+        Scanner scanner = new Scanner(System.in);
+        int opcao;
 
+        do {
+            System.out.println("0 - Sair");
+            System.out.println("1 - Criar venda");
+            System.out.println("2 - Imprimir todas as vendas");
+            System.out.println("3 - Imprimir vendas de um cliente");
+            System.out.println("4 - Imprimir clientes");
+            System.out.println("5 - Imprimir produtos");
+            System.out.print("Escolha uma opção: ");
+            opcao = scanner.nextInt();
+            scanner.nextLine(); // Consumir a nova linha
 
-        System.out.println("Bem-vindo ao nosso Sistema de Vendas! \n ");
-        while (opcaoMenu != 0) {
-            System.out.println(" MENU: \n Informe a opção desejada:");
-            System.out.println(" 1- Criar venda \n 2- Imprimir todas as vendas \n 3- Imprimir vendas de um cliente \n 4- Imprimir clientes \n 5- Imprimir produtos\n 0- Sair");
-            opcaoMenu = sc.nextInt();
-            switch (opcaoMenu) {
+            switch (opcao) {
                 case 1:
-                    // controle.criarVenda();
+                    // Criar venda
+                    System.out.print("Nome do cliente: ");
+                    String nomeCliente = scanner.nextLine();
+                    System.out.print("Nome do produto: ");
+                    String nomeProduto = scanner.nextLine();
+                    System.out.print("Valor pago: ");
+                    double valorPago = scanner.nextDouble();
+                    scanner.nextLine(); // Consumir a nova linha
+                    System.out.print("Status (RESERVA, PAGOTOTAL, ENVIADO): ");
+                    Status status = Status.valueOf(scanner.nextLine().toUpperCase());
+                    System.out.print("Canal (WHATSAPP, INSTAGRAM, FACEBOOK, OLX): ");
+                    Canal canal = Canal.valueOf(scanner.nextLine().toUpperCase());
+
+                    Cliente cliente = new Cliente(nomeCliente, "", "");
+                    Produto produto = new Produto(nomeProduto, valorPago, 1);
+                    controle.adicionarCliente(cliente);
+                    controle.adicionarProduto(produto);
+                    controle.criarVenda(cliente, produto, valorPago, status, canal);
                     break;
                 case 2:
-                     // controle.cadastrarProduto();
-                case 3:
-                    //TODO -> TESTAR
-                    System.out.println("informe o Id do cliente que você quer ver as compras: ");
-                    var id = sc.nextInt();
-                    controle.imprimirVendasCliente(id);
-                    break;
-                case 4:
                     controle.imprimirVendas();
                     break;
-                case 5:
+                case 3:
+                    System.out.print("Nome do cliente: ");
+                    String nomeClienteVenda = scanner.nextLine();
+                    controle.imprimirVendasCliente(nomeClienteVenda);
+                    break;
+                case 4:
                     controle.imprimirClientes();
                     break;
-                case 6:
-
-                    break;
-                case 7:
+                case 5:
                     controle.imprimirProdutos();
                     break;
-                case 8:
-
-                    break;
-                case 9:
-
-                    break;
-                case 10:
-
-                    break;
-                case 11:
-
-                    break;
-                case 12:
-
-                    break;
-
                 case 0:
-                    controle.sair();
+                    System.out.println("Saindo...");
                     break;
                 default:
-                    System.out.println("Opção inválida! Informe novamente.");
-                    break;
+                    System.out.println("Opção inválida!");
             }
+        } while (opcao != 0);
 
-        }
+        scanner.close();
     }
 }

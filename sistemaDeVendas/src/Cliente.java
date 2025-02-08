@@ -1,16 +1,20 @@
 public class Cliente {
-    private int geradorId = 0;
-    private Integer id;
+    private static int geradorId = 0;
+    private int id;
     private String nome;
     private String whatsapp;
     private String instagram;
 
-    public int getGeradorId() {
-        return geradorId;
+    public Cliente(String nome, String whatsapp, String instagram) {
+        this.id = ++geradorId;
+        this.nome = nome;
+        this.whatsapp = whatsapp;
+        this.instagram = instagram;
     }
 
-    public void setGeradorId(int geradorId) {
-        this.geradorId = geradorId;
+    // Getters e Setters
+    public int getId() {
+        return id;
     }
 
     public String getNome() {
@@ -19,14 +23,6 @@ public class Cliente {
 
     public void setNome(String nome) {
         this.nome = nome;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
     }
 
     public String getWhatsapp() {
@@ -47,11 +43,11 @@ public class Cliente {
 
     @Override
     public String toString() {
-        if (whatsapp != null && instagram != null) {
-            return String.format("Nome do cliente: %s %n Whatsapp do cliente: %s %n Instagram do cliente: %s %n", nome, whatsapp, instagram);
-        } else if (whatsapp != null && instagram == null) {
-            return String.format("Nome do cliente: %s %n Whatsapp do cliente: %s %n", nome, whatsapp);
-        } else return String.format("Nome do cliente: %s %n Instagram do cliente: %s %n", nome, instagram);
+        return "Cliente{" +
+                "id=" + id +
+                ", nome='" + nome + '\'' +
+                ", whatsapp='" + whatsapp + '\'' +
+                ", instagram='" + instagram + '\'' +
+                '}';
     }
-
 }

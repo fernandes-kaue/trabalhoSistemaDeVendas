@@ -1,33 +1,32 @@
 import java.util.Date;
 
 public class Venda {
-    private static int geradorId = 1;
-    private final Integer id;
-    private Cliente cliente;
-    private Produto produto;
+    private static int geradorId = 0;
+    private int id;
+    private Date dataVenda;
     private double valorPago;
     private Status status;
     private Canal canal;
-    private Date dataVenda;
+    private Cliente cliente;
+    private Produto produto;
 
-    // construtores
-    public Venda() {
-        geradorId += 1;
-        id = geradorId;
+    public Venda(Cliente cliente, Produto produto, double valorPago, Status status, Canal canal) {
+        this.id = ++geradorId;
+        this.dataVenda = new Date();
+        this.cliente = cliente;
+        this.produto = produto;
+        this.valorPago = valorPago;
+        this.status = status;
+        this.canal = canal;
     }
 
-    // getters and setters
-
-    public Integer getId() {
+    // Getters e Setters
+    public int getId() {
         return id;
     }
 
     public Date getDataVenda() {
         return dataVenda;
-    }
-
-    public void setDataVenda(Date dataVenda) {
-        this.dataVenda = dataVenda;
     }
 
     public double getValorPago() {
@@ -62,11 +61,24 @@ public class Venda {
         this.cliente = cliente;
     }
 
-    // toString
-    @Override
-    public String toString() {
-        return String.format("Venda ID: %d%n" + "Data da Venda: %tF %<tT%n" + "Valor: R$ %.2f%n" + "Status: %s%n" + "Canal: %s%n" + "Cliente: %s%n", id, dataVenda, valorPago, status, canal, cliente);
+    public Produto getProduto() {
+        return produto;
     }
 
+    public void setProduto(Produto produto) {
+        this.produto = produto;
+    }
 
+    @Override
+    public String toString() {
+        return "Venda{" +
+                "id=" + id +
+                ", dataVenda=" + dataVenda +
+                ", valorPago=" + valorPago +
+                ", status=" + status +
+                ", canal=" + canal +
+                ", cliente=" + cliente +
+                ", produto=" + produto +
+                '}';
+    }
 }
