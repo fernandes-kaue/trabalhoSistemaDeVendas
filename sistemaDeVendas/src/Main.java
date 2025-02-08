@@ -22,12 +22,12 @@ public class Main {
             System.out.println("12 - Imprimir vendas de um período");
             System.out.print("Escolha uma opção: ");
 
-            while (!scanner.hasNextInt()) { // Evita erro caso o usuário digite algo inválido
+            while (!scanner.hasNextInt()) {
                 System.out.println("Opção inválida! Digite um número.");
                 scanner.next();
             }
             opcao = scanner.nextInt();
-            scanner.nextLine(); // Consumir a nova linha
+            scanner.nextLine();
 
             switch (opcao) {
                 case 1:
@@ -56,7 +56,7 @@ public class Main {
                 case 8:
                     System.out.print("ID da venda: ");
                     int idVenda = scanner.nextInt();
-                    scanner.nextLine(); // Consumir a nova linha
+                    scanner.nextLine();
                     controle.mudarStatusVenda(idVenda);
                     break;
                 case 9:
@@ -64,13 +64,13 @@ public class Main {
                     String nomeProduto = scanner.nextLine();
                     System.out.print("Nova quantidade em estoque: ");
                     int novaQuantidade = scanner.nextInt();
-                    scanner.nextLine(); // Consumir a nova linha
+                    scanner.nextLine();
                     controle.atualizarQuantidadeEstoque(nomeProduto, novaQuantidade);
                     break;
                 case 10:
                     System.out.print("ID da venda: ");
                     int idVendaBusca = scanner.nextInt();
-                    scanner.nextLine(); // Consumir a nova linha
+                    scanner.nextLine();
                     controle.imprimirVendaId(idVendaBusca);
                     break;
                 case 11:
