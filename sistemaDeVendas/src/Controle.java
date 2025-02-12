@@ -1,4 +1,3 @@
-import java.sql.SQLOutput;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -99,6 +98,12 @@ public class Controle {
                     return novoProduto;
 
                 });
+
+        if (valorPago < produto.getValor()) {
+            status = Status.RESERVA;
+        } else if (valorPago >= produto.getValor()) {
+            status = Status.PAGOTOTAL;
+        }
 
         // Criar e adicionar venda
         Venda venda = new Venda(cliente, produto, valorPago, status, canal);
