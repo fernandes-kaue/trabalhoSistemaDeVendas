@@ -1,3 +1,4 @@
+import java.sql.SQLOutput;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -55,9 +56,18 @@ public class Controle {
                 .filter(c -> c.getNome().equalsIgnoreCase(nomeCliente))
                 .findFirst()
                 .orElseGet(() -> {
-                    Cliente novoCliente = new Cliente(nomeCliente, "", "");
+                    System.out.println("Cliente não cadastrado!");
+                    System.out.println("Faça o cadastro do cliente agora!");
+                    String nome = nomeCliente;
+                    System.out.print("Nome do cliente: "+nome+" \n");
+                    System.out.print("Telefone do cliente: ");
+                    String telefone = sc.nextLine();
+                    System.out.print("Email do cliente: ");
+                    String email = sc.nextLine();
+                    Cliente novoCliente = new Cliente(nome, telefone, email);
                     clientes.add(novoCliente);
                     return novoCliente;
+
                 });
 
         // Encontrar ou criar Produto
@@ -65,19 +75,29 @@ public class Controle {
                 .filter(p -> p.getNome().equalsIgnoreCase(nomeProduto))
                 .findFirst()
                 .orElseGet(() -> {
-                    System.out.print("Digite o preço do novo produto: ");
-                    double precoProduto;
-                    while (true) {
-                        try {
-                            precoProduto = Double.parseDouble(sc.nextLine());
-                            break;
-                        } catch (NumberFormatException e) {
-                            System.out.println("Preço inválido! Digite um número.");
-                        }
-                    }
-                    Produto novoProduto = new Produto(nomeProduto, precoProduto, 1);
+//                    System.out.print("Digite o preço do novo produto: ");
+//                    double precoProduto;
+//                    while (true) {
+//                        try {
+//                            precoProduto = Double.parseDouble(sc.nextLine());
+//                            break;
+//                        } catch (NumberFormatException e) {
+//                            System.out.println("Preço inválido! Digite um número.");
+//                        }
+//                    }
+
+                    System.out.println("Produto não cadastrado!");
+                    System.out.println("Faça o cadastro do produto agora!");
+                    String nome = nomeProduto;
+                    System.out.print("Nome do produto: "+nome+" \n");
+                    System.out.print("Preço do produto: ");
+                    double preco = Double.parseDouble(sc.nextLine());
+                    System.out.print("Quantidade em estoque: ");
+                    int quantidade = Integer.parseInt(sc.nextLine());
+                    Produto novoProduto = new Produto(nome, preco, quantidade);
                     produtos.add(novoProduto);
                     return novoProduto;
+
                 });
 
         // Criar e adicionar venda
