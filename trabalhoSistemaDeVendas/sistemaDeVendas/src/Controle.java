@@ -1,4 +1,3 @@
-import java.sql.SQLOutput;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -31,15 +30,7 @@ public class Controle {
             }
         }
 
-        Status status = null;
-        while (status == null) {
-            System.out.print("Status (RESERVA, PAGOTOTAL, ENVIADO): ");
-            try {
-                status = Status.valueOf(sc.nextLine().toUpperCase());
-            } catch (IllegalArgumentException e) {
-                System.out.println("Status inválido! Tente novamente.");
-            }
-        }
+        Status status = Status.valueOf("RESERVA");
 
         Canal canal = null;
         while (canal == null) {
@@ -95,10 +86,15 @@ public class Controle {
         });
 
         // Verificar se o valor pago é igual ao valor do produto para status PAGOTOTAL ou ENVIADO
-        if ((status == Status.PAGOTOTAL || status == Status.ENVIADO) && valorPago != produto.getValor()) {
-            System.out.println("O valor pago foi menor valor do produto então o produto esta em RESERVA.");
-            status = Status.valueOf("RESERVA");
-        }
+
+            if (((status == Status.PAGOTOTAL || status == Status.ENVIADO) && valorPago != produto.getValor()) && status == null) {
+                System.out.println("O valor pago foi menor valor do produto então o produto esta em RESERVA.");
+                status = Status.valueOf("RESERVA");
+            } else if (valorPago == produto.getValor()) {
+                status = Status.valueOf("PAGOTOTAL");
+
+            } else status = Status.valueOf("RESERVA");
+
 
         // Verificar se o valor pago é igual ao valor do produto para status PAGOTOTAL ou ENVIADO
         if (produto.getQuantidadeEmEstoque() < 1) {
